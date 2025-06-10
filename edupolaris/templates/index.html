@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h3>Get your discount</h3>
+    <button onclick="getCoupon()">Request Discount</button>
+
+    <script>
+      async function getCoupon() {
+        const userId = "123"; 
+        const res = await fetch('/generate-coupon', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ user_id: userId })
+        });
+
+        const data = await res.json();
+        alert("Promo Code sent to your email!");
+      }
+    </script>
+  </body>
+</html>

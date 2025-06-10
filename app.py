@@ -20,7 +20,7 @@ def generate_coupon():
 
     user_id = data.get("user_id")
     
-    user = {"email": "aabakah@caltech.edu", "plan": "free" if user_id == "1" else "paid"}
+    user = {"email": "chen.li@edupolaris.ai", "plan": "free" if user_id == "1" else "paid"}
 
     discount = 20 if user["plan"] == "paid" else 10
     expiration = datetime.now(timezone.utc) + timedelta(days=7)
